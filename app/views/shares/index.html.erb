@@ -1,5 +1,8 @@
 <h1>ブログ一覧</h1>
 
+<p><%= notice %></p>
+
+
 <table>
   <tr>
     <th>タイトル</th>
@@ -12,7 +15,8 @@
     <td><%= share.content %></td>
 
     <td><%= link_to '詳細を確認する', share_path(share.id) %></td>
-    <td><%= link_to "ブログを編集する", edit_share_path(share.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_share_path(share.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to 'ブログを削除する', share_path(share.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,5 @@
 class SharesController < ApplicationController
+  before_action :set_share, only: [:show, :edit, :update, :destroy] 
   def index
     @shares = Share.all
   end
@@ -9,7 +10,11 @@ class SharesController < ApplicationController
 
   def create
     Share.create(share_params)
-    redirect_to new_share_path
+    if @share.save
+      redirect_to shares_path, notice: "ブログを作成しました！"
+    else
+      render :new
+    end
   end
 
   def show
@@ -29,12 +34,24 @@ class SharesController < ApplicationController
     end
   end
 
+  def destroy
+    @share.destroy
+    redirect_to shares_path, notice:"投稿を削除しました！"
+  end
+
+
+
+
 
 
   private
 
   def share_params
     params.require(:share).permit(:title, :content)
+  end
+
+  def set_share
+    @share = Share.find(params[:id])
   end
 
 
