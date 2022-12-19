@@ -10,6 +10,9 @@ class SharesController < ApplicationController
 
   def create
     Share.create(share_params)
+    if params[:back]
+      render :new
+    end
     if @share.save
       redirect_to shares_path, notice: "ブログを作成しました！"
     else
@@ -37,6 +40,11 @@ class SharesController < ApplicationController
   def destroy
     @share.destroy
     redirect_to shares_path, notice:"投稿を削除しました！"
+  end
+
+  def confirm
+    @share = Share.new(share_params)
+    render :new if @share.invalid?
   end
 
 
