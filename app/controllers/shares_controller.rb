@@ -3,6 +3,7 @@ class SharesController < ApplicationController
   end
 
   def new
+    @share = Share.new
   end
-  
+
 end
