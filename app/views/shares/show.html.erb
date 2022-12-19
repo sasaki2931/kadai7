@@ -1,3 +1,9 @@
-<h1>ブログ詳細画面</h1>
-<p>タイトル: <%= @share.title %></p>
-<p>内容: <%= @share.content %></p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @share.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_share_path(@share) %> |
+<%= link_to 'Back', shares_path %>

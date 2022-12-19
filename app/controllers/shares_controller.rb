@@ -9,16 +9,18 @@ class SharesController < ApplicationController
   end
 
   def create
-    Share.create(share_params)
+    @share = current_user.shares.build(share_params)
     if params[:back]
       render :new
-    end
-    if @share.save
-      redirect_to shares_path, notice: "ブログを作成しました！"
     else
-      render :new
+      if @share.save
+        redirect_to shares_path, notice: "ブログを作成しました！"
+      else
+        render :new
+      end
     end
   end
+    
 
   def show
     @share = Share.find(params[:id])
@@ -43,7 +45,8 @@ class SharesController < ApplicationController
   end
 
   def confirm
-    @share = Share.new(share_params)
+    @share = current_user.shares.build(share_params)
+    binding.pry
     render :new if @share.invalid?
   end
 
@@ -55,7 +58,7 @@ class SharesController < ApplicationController
   private
 
   def share_params
-    params.require(:share).permit(:title, :content)
+    params.require(:share).permit(:title, :content,:image, :image_cache)
   end
 
   def set_share

@@ -10,6 +10,10 @@ gem 'pg', '~> 1.1'
 
 gem 'bcrypt'
 
+gem'carrierwave','~> 0.11'
+gem 'mini_magick'
+
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
