@@ -13,6 +13,8 @@ gem 'bcrypt'
 gem'carrierwave','~> 0.11'
 gem 'mini_magick'
 
+gem 'dotenv-rails'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
