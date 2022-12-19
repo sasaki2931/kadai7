@@ -1,5 +1,6 @@
 class SharesController < ApplicationController
   def index
+    @shares = Share.all
   end
 
   def new
@@ -10,6 +11,11 @@ class SharesController < ApplicationController
     Share.create(share_params)
     redirect_to new_share_path
   end
+
+  def show
+    @share = Share.find(params[:id])
+  end
+
 
   private
 

@@ -1,2 +1,21 @@
-<h1>Shares#index</h1>
-<p>Find me in app/views/shares/index.html.erb</p>
+<h1>ブログ一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+<% @shares.each do |share| %>
+  <tr>
+    <td><%= share.title %></td>
+    <td><%= share.content %></td>
+
+    <td><%= link_to '詳細を確認する', share_path(share.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新しくブログを投稿する', new_share_path %>
