@@ -16,6 +16,20 @@ class SharesController < ApplicationController
     @share = Share.find(params[:id])
   end
 
+  def edit
+    @share = Share.find(params[:id])
+  end
+
+  def update
+    @share = Share.find(params[:id])
+    if @share.update(share_params)
+      redirect_to shares_path, notice: "投稿を編集しました！"
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 

@@ -12,6 +12,7 @@
     <td><%= share.content %></td>
 
     <td><%= link_to '詳細を確認する', share_path(share.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_share_path(share.id) %></td>
   </tr>
 <% end %>
 </table>
