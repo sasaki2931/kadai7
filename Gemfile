@@ -8,6 +8,14 @@ gem 'rails', '~> 6.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
+gem 'rexml'
+
+group :development do
+  gem 'letter_opener_web'
+end
+
+
+
 gem 'bcrypt'
 
 gem'carrierwave','~> 0.11'
