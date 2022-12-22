@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    mount_uploader :avatar, AvatarUploader
     has_many :shares
     validates :name,  presence: true, length: { maximum: 30 }
     validates :email, presence: true, length: { maximum: 255 },

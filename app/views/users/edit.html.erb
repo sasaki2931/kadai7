@@ -1,0 +1,8 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  
+    <div class="blog_title">
+      <%= form.label :名前 %>
+      <%= form.text_field :@user.name %>
+    </div>
+    <%= form.submit %>
+  <% end %>

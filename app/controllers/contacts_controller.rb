@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
     end
     
     def create
-        @contact = Contact.new(contact_params)
+      @contact = Contact.new(contact_params)
       if @contact.save
           ContactMailer.contact_mail(@contact, current_user).deliver
           redirect_to shares_path, notice: 'お問い合わせ内容を送信しました'
@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
     
         # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:name, :content)
+      params.require(:contact).permit(:email,:name,:avatar)
     end
     
 end
