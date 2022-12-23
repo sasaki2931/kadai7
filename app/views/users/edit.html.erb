@@ -1,8 +1,22 @@
-<%= form_with(model: @user, local: true) do |form| %>
-  
-    <div class="blog_title">
-      <%= form.label :名前 %>
-      <%= form.text_field :@user.name %>
-    </div>
-    <%= form.submit %>
-  <% end %>
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <div class="field">
+    <%= f.label :avater %>
+    <%= f.file_field :avater %> 
+    <%= f.hidden_field :avater_cache %>
+  </div>
+
+
+  <%= f.submit "Create my account" %>
+<% end %>

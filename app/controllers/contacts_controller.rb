@@ -6,7 +6,6 @@ class ContactsController < ApplicationController
     def create
       @contact = Contact.new(contact_params)
       if @contact.save
-          ContactMailer.contact_mail(@contact, current_user).deliver
           redirect_to shares_path, notice: 'お問い合わせ内容を送信しました'
       else
           render :new

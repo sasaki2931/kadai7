@@ -3,9 +3,11 @@
 <%= form_with(model: @share, url: shares_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
 
   <p>タイトル:<%= @share.title %></p>
   <p>本文:<%= @share.content %></p>
+
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>

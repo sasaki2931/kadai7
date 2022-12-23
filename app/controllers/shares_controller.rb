@@ -15,6 +15,7 @@ class SharesController < ApplicationController
       render :new
     else
       if @share.save
+        ContactMailer.contact_mail(@share, current_user).deliver
         redirect_to shares_path, notice: "ブログを作成しました！"
       else
         render :new
@@ -47,7 +48,7 @@ class SharesController < ApplicationController
 
   def confirm
     @share = current_user.shares.build(share_params)
-    binding.pry
+    #binding.pry
     render :new if @share.invalid?
   end
 
@@ -59,7 +60,7 @@ class SharesController < ApplicationController
   private
 
   def share_params
-    params.require(:share).permit(:title, :content,:image, :image_cache)
+    params.require(:share).permit(:title, :content, :image, :image_cache)
   end
 
   def set_share
