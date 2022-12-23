@@ -3,7 +3,9 @@
 <%= form_with(model: @share, url: shares_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <%= form.hidden_field :image %>
+  <%= image_tag(@share.image.url) if @share.image && @share.image.url %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "投稿する" %>
 
   <p>タイトル:<%= @share.title %></p>
   <p>本文:<%= @share.content %></p>
