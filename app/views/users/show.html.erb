@@ -13,9 +13,9 @@
 
   <div class="field">
     <%= form.label :avater %>
-    <%= image_tag(@user.avater.url) if @user.avater && @user.avater.url %>
-    <%= form.file_field :avater %>
-    <%= form.hidden_field :avater_cache %>
+    <%= image_tag(@user.avatar.url) if @user.avatar && @user.avatar.url %>
+    <%= form.file_field :avatar %>
+    <%= form.hidden_field :avatar_cache %>
   </div>
 
   <div class="actions">
