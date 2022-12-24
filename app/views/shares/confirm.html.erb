@@ -9,6 +9,7 @@
 
   <p>タイトル:<%= @share.title %></p>
   <p>本文:<%= @share.content %></p>
+  <p>user:<%=@share.user.name %></P>
 
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>

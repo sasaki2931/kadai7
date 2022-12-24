@@ -1,9 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1>ブログ詳細画面</h1>
+<p>タイトル: <%= @share.title %></p>
+<p>内容: <%= @share.content %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @share.image.url %>
-</p>
+<% if @share.image.present? %>
+    <p>
+        <strong>ユーザーアイコン</strong>
+        <%= image_tag @user.image.url %>
+    </p>
+<% end %>
+
+<% unless @share.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(share_id: @share.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_share_path(@share) %> |
 <%= link_to 'Back', shares_path %>

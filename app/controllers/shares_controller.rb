@@ -26,6 +26,7 @@ class SharesController < ApplicationController
 
   def show
     @share = Share.find(params[:id])
+    @favorite = current_user.favorites.find_by(share_id: @share.id)
   end
 
   def edit

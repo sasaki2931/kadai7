@@ -7,8 +7,8 @@
   <tr>
     <th>タイトル</th>
     <th>内容</th>
-    <th>image</th>
-    <th>User</th>
+    <th>avatar</th>
+    <th>user</th>
   </tr>
 
 <% @shares.each do |share| %>
@@ -17,7 +17,6 @@
     <td><%= share.content %></td>
     <td><%= share.image %></td>
     <td<<%= share.user.name %></td>
-
     <td><%= link_to '詳細を確認する', share_path(share.id) %></td>
     <td><%= link_to "ブログを編集する", edit_share_path(share.id), data: { confirm: '本当に編集していいですか？' } %></td>
     <td><%= link_to 'ブログを削除する', share_path(share.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
