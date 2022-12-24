@@ -21,6 +21,7 @@ gem 'bcrypt'
 gem'carrierwave','~> 0.11'
 gem 'mini_magick'
 
+gem 'faker'
 gem 'dotenv-rails'
 
 

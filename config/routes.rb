@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :profile
   resources :shares
 
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy,:new]
   
   resources :shares do
     collection do
