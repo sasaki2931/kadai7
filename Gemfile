@@ -18,7 +18,8 @@ end
 
 gem 'bcrypt'
 
-gem'carrierwave','~> 0.11'
+gem'carrierwave'
+
 gem 'mini_magick'
 
 gem 'faker'
