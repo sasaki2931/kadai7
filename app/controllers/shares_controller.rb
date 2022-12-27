@@ -25,16 +25,15 @@ class SharesController < ApplicationController
     
 
   def show
-    @share = Share.find(params[:id])
+    
     @favorite = current_user.favorites.find_by(share_id: @share.id)
   end
 
   def edit
-    @share = Share.find(params[:id])
+    
   end
 
   def update
-    @share = Share.find(params[:id])
     if @share.update(share_params)
       redirect_to shares_path, notice: "投稿を編集しました！"
     else

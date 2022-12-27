@@ -2,6 +2,9 @@ require_relative "boot"
 
 require "rails/all"
 
+config.time_zone = 'Tokyo'
+config.active_record.default_timezone = :local
+
 
 
 Bundler.require(*Rails.groups)

@@ -21,7 +21,10 @@
 
 
 <p class="d-flex justify-content-end">
-  <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn-sm btn-success" %>
+  <% if @user.id == current_user.id %>
+    <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn-sm btn-success" %>
+  <% end %>
+
   <%= link_to "ブログ一覧画面にもどる", shares_path %>
 
 </p>

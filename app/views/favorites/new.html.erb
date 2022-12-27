@@ -13,7 +13,7 @@
   <tbody>
     <% @favorites.each do |favorite| %>
       <tr>
-      <td><%= image_tag favorite.post.image.url %></td>
+      <td><%= image_tag favorite.share.image.url %></td>
       <td><%= link_to '画像詳細', favorite %></td>
       </tr>
     <% end %>

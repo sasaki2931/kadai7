@@ -5,5 +5,5 @@ module SharesHelper
         elsif action_name == 'edit'
           share_path
         end
-      end
+    end
 end

@@ -1,12 +1,14 @@
 ja:
   activerecord:
     models:
-      blog: ブログ
+      share: シェア
       user: ユーザー
+      avatar: アバター
     attributes:
-      blog:
+      share:
         title: タイトル
         content: 内容
+        image: イメージ
       user:
         title: タイトル
         name: 名前
