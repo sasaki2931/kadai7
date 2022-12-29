@@ -1,5 +1,8 @@
 {
   "name": "kadai7",
+  "engines": {
+    "node": "16.17.0"
+  },
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
